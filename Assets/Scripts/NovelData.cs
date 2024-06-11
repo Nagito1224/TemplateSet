@@ -8,7 +8,7 @@ public class NovelData : ScriptableObject
     public List<Story> stories = new List<Story>();
 }
 
-
+[System.Serializable]
 public class Story
 {
     public Sprite Background;
