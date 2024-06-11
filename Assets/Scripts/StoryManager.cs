@@ -8,8 +8,8 @@ public class StoryManager : MonoBehaviour
 {
     [SerializeField] private NovelData[] storyDataList;
 
-    [SerializeField] private GameObject background;
-    [SerializeField] private GameObject characterImage;
+    [SerializeField] private Image background;
+    [SerializeField] private Image characterImage;
     [SerializeField] private Text storyText;
     [SerializeField] private Text characterName;
 
@@ -20,9 +20,28 @@ public class StoryManager : MonoBehaviour
 
 
     //コルーチンの開始
-    void void StartNovelEvent()
+    public void StartNovelEvent()
     {
         StartCoroutine(NovelEventCoroutine());
+    }
+
+
+    //会話イベントのコルーチン
+    private IEnumerator NovelEventCoroutine()
+    {
+        if (textIndex >= storyDataList[storyIndex].stories.Count)
+            yield break;
+
+        yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
+
+        if (finishTextFlag)
+        {
+            storyText.text = "";
+            characterName.text = "";
+
+            SetStoryElement(storyIndex, textIndex);
+            textIndex++;
+        }
     }
 
     //要素の読み込み
@@ -30,32 +49,10 @@ public class StoryManager : MonoBehaviour
     {
         var storyElement = storyDataList[storyIndex].stories[textIndex];
 
-        background = storyElement.Background;
-        characterImage = storyElement.CharacterImage;
+        background.sprite = storyElement.Background;
+        characterImage.sprite = storyElement.CharacterImage;
         StartCoroutine(TypeSentence(storyIndex, textIndex));
         characterName.text = storyElement.CharacterName;
-    }
-
-    //会話イベントのコルーチン
-    IEnumerator NovelEventCoroutine()
-    {
-        if (textIndex >= storyDataList[storyIndex].stories.Count)
-            yield break;
-
-        yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
-        yield return null;
-
-        if(finishTextFlag)
-            ProgressStory(storyIndex);
-    }
-
-    private void ProgressStory(int _storyIndex)
-    {
-        storyText.text = "";
-        characterName = "";
-
-        SetStoryElement(storyIndex, textIndex);
-        textIndex++;
     }
 
     private IEnumerator TypeSentence(int _storyIndex, int _textIndex)
