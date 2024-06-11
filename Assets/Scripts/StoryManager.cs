@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -16,7 +17,7 @@ public class StoryManager : MonoBehaviour
     public int storyIndex { get; private set; }
     public int textIndex { get; private set; }
 
-    private bool finishTextFlag = false;
+    private bool finishTextFlag = true;
 
 
     //コルーチンの開始
@@ -29,22 +30,22 @@ public class StoryManager : MonoBehaviour
     //会話イベントのコルーチン
     private IEnumerator NovelEventCoroutine()
     {
-        if (textIndex >= storyDataList[storyIndex].stories.Count)
-            yield break;
-
-        yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
-
-        if (finishTextFlag)
+        foreach (var story in storyDataList[storyIndex].stories)
         {
-            storyText.text = "";
-            characterName.text = "";
+            if (finishTextFlag)
+            {
+                storyText.text = "";
+                characterName.text = "";
 
-            SetStoryElement(storyIndex, textIndex);
-            textIndex++;
+                SetStoryElement(storyIndex, textIndex);
+                textIndex++;
+            }
+            yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
+            yield return null;
         }
     }
 
-    //要素の読み込み
+    //要素の読み込み(表示切り替え)
     private void SetStoryElement(int _storyIndex, int _textIndex)
     {
         var storyElement = storyDataList[storyIndex].stories[textIndex];

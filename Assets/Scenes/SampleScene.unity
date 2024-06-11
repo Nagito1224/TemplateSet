@@ -649,7 +649,7 @@ MonoBehaviour:
   storyDataList:
   - {fileID: 11400000, guid: ff85e4c5501ea2346873333d4112879c, type: 2}
   background: {fileID: 1067954203}
-  characterImage: {fileID: 0}
+  characterImage: {fileID: 1150803666}
   storyText: {fileID: 599058444}
   characterName: {fileID: 1119264166}
 --- !u!4 &1156204867
@@ -667,6 +667,79 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1366216095
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1366216097}
+  - component: {fileID: 1366216098}
+  - component: {fileID: 1366216096}
+  m_Layer: 0
+  m_Name: EventManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1366216096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366216095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bf098eb781a05f499f03bad4686e073, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  events: []
+--- !u!4 &1366216097
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366216095}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1090.5736, y: 470.60126, z: 1015.766}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1366216098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366216095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c53922e1fbade54b879b868816b5bd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startUpEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1156204866}
+        m_TargetAssemblyTypeName: StoryManager, Assembly-CSharp
+        m_MethodName: StartNovelEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1563954166
 GameObject:
   m_ObjectHideFlags: 0
@@ -925,3 +998,4 @@ SceneRoots:
   - {fileID: 1663651907}
   - {fileID: 1610272208}
   - {fileID: 1156204867}
+  - {fileID: 1366216097}
