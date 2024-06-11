@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu (fileName = "New Novel Data", menuName = "Novel Data")]
 public class NovelData : ScriptableObject
 {
-
+    public List<Story> stories = new List<Story>();
 }
 
 
