@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class StoryManager : MonoBehaviour
@@ -14,11 +15,12 @@ public class StoryManager : MonoBehaviour
     [SerializeField] private Text storyText;
     [SerializeField] private Text characterName;
 
+    [SerializeField] private UnityEvent eventAfterThisOne;
+
     public int storyIndex { get; private set; }
     public int textIndex { get; private set; }
 
     private bool finishTextFlag = true;
-
 
     //コルーチンの開始
     public void StartNovelEvent()
@@ -27,7 +29,7 @@ public class StoryManager : MonoBehaviour
     }
 
 
-    //会話イベントのコルーチン
+    //会話コルーチン
     private IEnumerator NovelEventCoroutine()
     {
         foreach (var story in storyDataList[storyIndex].stories)
@@ -43,6 +45,8 @@ public class StoryManager : MonoBehaviour
             yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
             yield return null;
         }
+
+        eventAfterThisOne.Invoke();
     }
 
     //要素の読み込み(表示切り替え)
@@ -56,6 +60,7 @@ public class StoryManager : MonoBehaviour
         characterName.text = storyElement.CharacterName;
     }
 
+    //タイピングアニメーション
     private IEnumerator TypeSentence(int _storyIndex, int _textIndex)
     {
         finishTextFlag = false;

@@ -652,6 +652,21 @@ MonoBehaviour:
   characterImage: {fileID: 1150803666}
   storyText: {fileID: 599058444}
   characterName: {fileID: 1119264166}
+  eventAfterThisOne:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1366216099}
+        m_TargetAssemblyTypeName: GeneralFuncCollection, Assembly-CSharp
+        m_MethodName: QuitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &1156204867
 Transform:
   m_ObjectHideFlags: 0
@@ -678,6 +693,7 @@ GameObject:
   - component: {fileID: 1366216097}
   - component: {fileID: 1366216098}
   - component: {fileID: 1366216096}
+  - component: {fileID: 1366216099}
   m_Layer: 0
   m_Name: EventManager
   m_TagString: Untagged
@@ -740,6 +756,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1366216099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366216095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67f38e74411eac44b87c1d562657ddc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1563954166
 GameObject:
   m_ObjectHideFlags: 0

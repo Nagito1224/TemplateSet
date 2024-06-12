@@ -19,13 +19,13 @@ MonoBehaviour:
     CharacterName: "\u306B\u3053"
   - Background: {fileID: 21300000, guid: 100bd4622b7b10c4ca4bb1a8b5e6d2d4, type: 3}
     CharacterImage: {fileID: 21300000, guid: 3885b58e72797d54eb1fc9cf14431ddb, type: 3}
-    StoryText: "\u3053\u308C\u306F\u30B5\u30F3\u30D7\u30EB\u3067\u3059"
+    StoryText: "\u3053\u308C\u306F\u30B5\u30F3\u30D7\u30EB\u3067\u3059\n2\u3064\u76EE\u306E\u30BB\u30EA\u30D5\u3067\u3059"
     CharacterName: "\u306B\u3053"
   - Background: {fileID: 21300000, guid: 100bd4622b7b10c4ca4bb1a8b5e6d2d4, type: 3}
     CharacterImage: {fileID: 21300000, guid: 3885b58e72797d54eb1fc9cf14431ddb, type: 3}
-    StoryText: "\u3053\u308C\u306F\u30B5\u30F3\u30D7\u30EB\u3067\u3059"
+    StoryText: "3\u3064\u76EE\u306E\u30BB\u30EA\u30D5\u3067\u3059"
     CharacterName: "\u306B\u3053"
   - Background: {fileID: 21300000, guid: 100bd4622b7b10c4ca4bb1a8b5e6d2d4, type: 3}
     CharacterImage: {fileID: 21300000, guid: 3885b58e72797d54eb1fc9cf14431ddb, type: 3}
-    StoryText: "\u3053\u308C\u306F\u30B5\u30F3\u30D7\u30EB\u3067\u3059"
+    StoryText: "\u3053\u308C\u3067\u30B5\u30F3\u30D7\u30EB\u30C6\u30AD\u30B9\u30C8\u306F\u7D42\u4E86\u3067\u3059"
     CharacterName: "\u306B\u3053"
