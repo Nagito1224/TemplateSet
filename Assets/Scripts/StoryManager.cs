@@ -34,19 +34,16 @@ public class StoryManager : MonoBehaviour
     {
         foreach (var story in storyDataList[storyIndex].stories)
         {
-            if (finishTextFlag)
-            {
                 storyText.text = "";
                 characterName.text = "";
 
                 SetStoryElement(storyIndex, textIndex);
                 textIndex++;
-            }
-            yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
-            yield return null;
+                yield return new WaitUntil(() => finishTextFlag && Input.GetMouseButtonDown(0));
+                yield return null;
         }
 
-        eventAfterThisOne.Invoke();
+            eventAfterThisOne.Invoke();
     }
 
     //óvëfÇÃì«Ç›çûÇ›(ï\é¶êÿÇËë÷Ç¶)
@@ -65,9 +62,15 @@ public class StoryManager : MonoBehaviour
     {
         finishTextFlag = false;
 
-        foreach (var letter in storyDataList[_storyIndex].stories[_textIndex].StoryText.ToCharArray())
+        var fullText = storyDataList[_storyIndex].stories[_textIndex].StoryText;
+        foreach (var letter in fullText.ToCharArray())
         {
             storyText.text += letter;
+            if (Input.GetMouseButtonDown(0))
+            {
+                storyText.text = fullText;
+                break;
+            }
             yield return new WaitForSeconds(0.04f);
         }
 
