@@ -68,7 +68,7 @@ public class StoryManager : MonoBehaviour
         foreach (var letter in storyDataList[_storyIndex].stories[_textIndex].StoryText.ToCharArray())
         {
             storyText.text += letter;
-            yield return new WaitForSeconds(0.01f);
+            yield return new WaitForSeconds(0.04f);
         }
 
         finishTextFlag = true;
